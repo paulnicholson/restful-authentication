@@ -56,11 +56,11 @@ class AuthenticatedGenerator < ActiveRecord::Generators::Base
 
   def create_controllers
     # Sessions Controller
-    directory File.join('app/controllers', controller_class_path)
+    # directory File.join('app/controllers', controller_class_path)
     class_collisions "#{controller_class_name}Controller"
     template 'controllers/controller.rb', File.join('app/controllers', controller_class_path, "#{controller_file_name}_controller.rb")
     # Users Controller
-    directory File.join('app/controllers', model_controller_class_path)
+    # directory File.join('app/controllers', model_controller_class_path)
     template 'controllers/model_controller.rb', File.join('app/controllers', model_controller_class_path, "#{model_controller_file_name}_controller.rb")
   end
 
@@ -217,10 +217,10 @@ class AuthenticatedGenerator < ActiveRecord::Generators::Base
 #    end
 
   def create_helper_files
-    directory File.join('app/helpers', controller_class_path)
+    # directory File.join('app/helpers', controller_class_path)
     class_collisions "#{controller_class_name}Helper"
     template 'helpers/helper.rb', File.join('app/helpers', controller_class_path, "#{controller_file_name}_helper.rb")
-    directory File.join('app/helpers', model_controller_class_path)
+    # directory File.join('app/helpers', model_controller_class_path)
     template 'helpers/model_helper.rb', File.join('app/helpers', model_controller_class_path, "#{model_controller_file_name}_helper.rb")
   end
 
